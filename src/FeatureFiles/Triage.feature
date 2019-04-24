@@ -7,7 +7,7 @@ Then User Enters UserName and Password in the login form
 And Click on the login button
 Then User is on the Home Page
 
-@53572 @Sanity @Regression @Smoke
+@53574 @Sanity @Regression @Smoke
 Scenario Outline: User is opening an Service Request and update the Cutomer Details
 When User is click on a "<Ticket>" with name Triage
 Then Triage Form should be open
@@ -19,7 +19,7 @@ Then Open Assignment updated as Fix
 
 Examples:
 | Ticket | Priority  |
-| SR-87   | High     |
+|        | High     |
 
 
 

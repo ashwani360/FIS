@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 
 import org.openqa.selenium.support.PageFactory;
 public class CreateNew {
-    @FindBy(xpath="//span[text()='New']")
+    @FindBy(xpath="//span[text()='New']/parent::*/preceding-sibling::*/span")
 
     public WebElement New;
     @FindBy(xpath="//span[text()='Service Request']")
@@ -45,6 +45,12 @@ public class CreateNew {
     @FindBy(xpath="//h2[text()='Open assignments']/parent::*/parent::*/following-sibling::*/div//a[1]")
 
     public WebElement Nextstage;
+    @FindBy(xpath="//div[@class='layout layout-noheader layout-noheader-portal_header']/div/div/div[5]/div")
+
+    public WebElement Profile;
+    @FindBy(xpath="//span[text()='Log off']")
+
+    public WebElement Logoff;
     
 
 }

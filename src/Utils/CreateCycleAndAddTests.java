@@ -129,7 +129,7 @@ public class CreateCycleAndAddTests {
 	}
 	
 	
-	public static void UpdateStatus(String zephyrBaseUrl, String accessKey, String secretKey, String accountId,long pid,long vid, String status,Map<String,String> executionmapes, String CycleID, String Testcaseid) throws URISyntaxException, JarException, IllegalStateException, JSONException, IOException {
+	public static void UpdateStatus(String zephyrBaseUrl, String accessKey, String secretKey, String accountId,long pid,long vid, String status,Map<String,String> executionmapes, String CycleID, String Testcaseid,String Comment) throws URISyntaxException, JarException, IllegalStateException, JSONException, IOException {
 		// Replace zephyr baseurl <ZAPI_Cloud_URL 557058> shared with the user for ZAPI Cloud
 		ZFJCloudRestClient client = ZFJCloudRestClient.restBuilder(zephyrBaseUrl, accessKey, secretKey, accountId)
 				.build();
@@ -142,7 +142,7 @@ public class CreateCycleAndAddTests {
 		executeTestsObj.put("cycleId", CycleID);
 		executeTestsObj.put("projectId", String.valueOf(pid));
 		executeTestsObj.put("versionId", String.valueOf(vid));
-		executeTestsObj.put("comment", "Comment by Automation");
+		executeTestsObj.put("comment", Comment);
 		Map<String,String> map=new HashMap<String,String>();          
 	    map.put("ExecutionID",executionmapes.get(Testcaseid));
 	    map.put("TestcaseID",Testcaseid);

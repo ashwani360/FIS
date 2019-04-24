@@ -42,7 +42,23 @@ public class Fix_Page_Step_defination {
 	public void user_is_click_on_a_with_name_Fix(String arg1) throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
 		System.out.println(" Select A ticket with  Fix stage");
-		FixPage.OpenTicketinfix(arg1);
+		if(!arg1.equals("")) {
+			System.out.println("A ticket with Fixed State has been open");
+			FixPage.OpenTicketinfix(arg1);
+			Thread.sleep(5000);
+		}
+		else if(!contextSteps.TicketID.equals("")) {
+			System.out.println("A ticket with Fixed State has been open");
+			FixPage.OpenTicketinfix(contextSteps.TicketID);
+			Thread.sleep(5000);
+		}
+		
+		else
+		{ System.out.println("With Name");
+		FixPage.OpenTicketbyName();
+		Thread.sleep(5000);
+		}
+		
 	};
 
 	@Then("^Fix Form should be open$")
@@ -50,6 +66,7 @@ public class Fix_Page_Step_defination {
 	    // Write code here that turns the phrase above into concrete actions
 		System.out.println(" Verify Currect Forms opens");
 		FixPage.VerifyFixPage();
+		contextSteps.Run_AccessibilityTest("Fix Page");
 	};
 
 	@Then("^User enter \"([^\"]*)\" of the fix$")
@@ -71,6 +88,7 @@ public class Fix_Page_Step_defination {
 	    // Write code here that turns the phrase above into concrete actions
 		System.out.println(" Verify Next stage after Fix");
 		FixPage.VerifyNextstage();
+		
 	};
 
 	

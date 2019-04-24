@@ -1,8 +1,13 @@
 package StepsDefinationsHelper;
 
 
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
 import org.testng.asserts.*;
 
 import Locaters.Home_Page;
@@ -13,9 +18,14 @@ import junit.framework.Assert;
 
 public class LoginPage_Helper extends Login {
 	public WebDriver driver;
+	Wait<WebDriver> wait;
 	public LoginPage_Helper(WebDriver driver) {
 		// this.driver = driver;
 		this.driver=driver;
+		wait = new FluentWait<WebDriver>(driver)       
+				.withTimeout(600, TimeUnit.SECONDS)    
+				.pollingEvery(15, TimeUnit.SECONDS)    
+				.ignoring(NoSuchElementException.class); 
 		System.out.println("In base Helperclase: "+driver.toString());
 		PageFactory.initElements(driver, this);
 	}

@@ -42,8 +42,10 @@ public class Login_Page_Step_defination {
 	public void user_is_on_the_login_page() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
 	   // throw new PendingException();
+		Thread.sleep(5000);
 		System.out.println("On Login Page");
 		LoginPage.verifyLoginpage();
+		contextSteps.Run_AccessibilityTest("Login Page");
 	};
 	
 	@Then("^User Enters UserName and Password in the login form$")
@@ -60,6 +62,7 @@ public class Login_Page_Step_defination {
 	    //throw new PendingException();
 		System.out.println("Clicked on Login button");
 		LoginPage.ClickLogin();
+		Thread.sleep(5000);
 	};
 
 	@Then("^User is on the Home Page$")
@@ -68,6 +71,8 @@ public class Login_Page_Step_defination {
 	    //throw new PendingException();
 		System.out.println("On Home Page");
 		LoginPage.VerifyHomepage();
+		contextSteps.Run_AccessibilityTest("DashBoard Page");
+		
 	};
 	
 

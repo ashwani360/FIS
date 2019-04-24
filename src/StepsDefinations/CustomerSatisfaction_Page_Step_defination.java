@@ -42,8 +42,22 @@ public class CustomerSatisfaction_Page_Step_defination {
 	public void user_is_click_on_a_with_name_Fix(String arg1) throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
 	    //throw new PendingException();
-		System.out.println("A ticket with Fixed State has been open");
-		CustomerSatisfaction.OpenTicketinresolve(arg1);
+		if(!arg1.equals("")) {
+			System.out.println("A ticket with Fixed State has been open");
+			CustomerSatisfaction.OpenTicketinresolve(arg1);
+			Thread.sleep(5000);
+		}
+		else if(!contextSteps.TicketID.equals("")) {
+			System.out.println("A ticket with Fixed State has been open");
+			CustomerSatisfaction.OpenTicketinresolve(contextSteps.TicketID);
+			Thread.sleep(5000);
+		}
+		
+		else
+		{ System.out.println("With Name");
+			CustomerSatisfaction.OpenTicketbyName();
+			Thread.sleep(5000);
+		}
 	};
 
 	@Then("^Customer Satisfaction Form should be open$")
@@ -52,6 +66,7 @@ public class CustomerSatisfaction_Page_Step_defination {
 	    //throw new PendingException();
 		System.out.println("Customer Satisfaction Page gets open");
 		CustomerSatisfaction.VerifyCustomerSatisfactionPage();
+		contextSteps.Run_AccessibilityTest("Customer Satisfaction Page");
 	};
 
 	@Then("^User enter \"([^\"]*)\" details$")
@@ -76,6 +91,8 @@ public class CustomerSatisfaction_Page_Step_defination {
 	    //throw new PendingException();
 		System.out.println("Verify Thanksyou message gets displayed");
 		CustomerSatisfaction.VerifyNextstage();
+		contextSteps.Run_AccessibilityTest("Close Service Request Page");
+		
 	};
 	
 

@@ -1,8 +1,11 @@
 package StepsDefinationsHelper;
 
+import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.testng.asserts.*;
 
 import Locaters.CustomerInfo;
@@ -10,12 +13,17 @@ import Locaters.Home_Page;
 import Utils.LocatorReader;
 import Utils.ProeprtyReader;
 import junit.framework.Assert;
-
+import org.openqa.selenium.support.ui.Wait;
 public class CustomerInfoPage_Helper extends CustomerInfo {
 	public WebDriver driver;
+	Wait<WebDriver> wait;
 	public CustomerInfoPage_Helper(WebDriver driver) {
 		// this.driver = driver;
 		this.driver=driver;
+		wait = new FluentWait<WebDriver>(driver)       
+				.withTimeout(600, TimeUnit.SECONDS)    
+				.pollingEvery(15, TimeUnit.SECONDS)    
+				.ignoring(NoSuchElementException.class); 
 		System.out.println("In base Helperclase: "+driver.toString());
 		PageFactory.initElements(driver, this);
 	}
@@ -62,8 +70,12 @@ public class CustomerInfoPage_Helper extends CustomerInfo {
 	public void VerifyPhone(String arg2){
 		Assert.assertTrue("Customer Email is updated", UpdatedPhone.getText().equals(arg2));
 	}
-	public void VerifyNextstage(){
+	public void VerifyNextstage() throws InterruptedException{
 		Assert.assertTrue("Issues is updated", Nextstage.getText().equals("Triage (Triage)"));
+		driver.switchTo().defaultContent();
+		Profile.click();
+		Logoff.click();
+		Thread.sleep(3000);
 	}
 }
 

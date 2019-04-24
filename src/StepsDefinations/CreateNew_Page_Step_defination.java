@@ -43,8 +43,11 @@ public class CreateNew_Page_Step_defination {
 	    // Write code here that turns the phrase above into concrete actions
 	    //throw new PendingException();
 		System.out.println("User Clicked on New Link");
+		Thread.sleep(6000);
 		CreateNew.clickonnew();
+		Thread.sleep(1000);
 		CreateNew.clickonServicereques();
+		Thread.sleep(5000);
 	};
 
 	@Then("^Create New should get displayed$")
@@ -53,6 +56,7 @@ public class CreateNew_Page_Step_defination {
 	    //throw new PendingException();
 		System.out.println("Verify New Page is open");
 		CreateNew.VerifyPageheader();
+		contextSteps.Run_AccessibilityTest("Create New Page");
 	};
 
 	@Then("^User Select \"([^\"]*)\" and Enter \"([^\"]*)\" in the Form$")
@@ -69,6 +73,7 @@ public class CreateNew_Page_Step_defination {
 	    // Write code here that turns the phrase above into concrete actions
 		System.out.println("Clikced on Save button");
 		contextSteps.TicketID=CreateNew.ClickSave();
+		Thread.sleep(5000);
 	};
 
 	@Then("^The \"([^\"]*)\" and \"([^\"]*)\" Case Information will get save$")
@@ -85,6 +90,8 @@ public class CreateNew_Page_Step_defination {
 	    // Write code here that turns the phrase above into concrete actions
 		System.out.println("Clikced on Submit button");
 		CreateNew.ClickSubmit();
+		Thread.sleep(5000);
+		contextSteps.Run_AccessibilityTest("Collect Customer Detail Page");
 	};
 
 	@Then("^Open Assignment updated as Collect Cutomer Detail$")

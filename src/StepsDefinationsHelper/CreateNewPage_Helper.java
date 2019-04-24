@@ -3,6 +3,7 @@ package StepsDefinationsHelper;
 
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -34,12 +35,12 @@ public class CreateNewPage_Helper extends CreateNew {
 	
 	
 	
-	public void clickonnew()
-	{
+	public void clickonnew() throws InterruptedException
+	{  Thread.sleep(2000);
 		New.click();
 	}
-	public void clickonServicereques()
-	{
+	public void clickonServicereques() throws InterruptedException
+	{Thread.sleep(2000);
 		ServiceRequest.click();
 	}
 	public void VerifyPageheader()
@@ -74,7 +75,11 @@ public class CreateNewPage_Helper extends CreateNew {
 		Submit.click();
 		Thread.sleep(3000);
 	}
-	public void VerifyNext(){
+	public void VerifyNext() throws InterruptedException{
 		Assert.assertTrue("Issues is updated", Nextstage.getText().equals("Collect customer details (Create)"));
+		driver.switchTo().defaultContent();
+		Profile.click();
+		Logoff.click();
+		Thread.sleep(3000);
 	}
 }

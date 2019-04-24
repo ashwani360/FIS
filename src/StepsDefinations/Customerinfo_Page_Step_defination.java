@@ -45,15 +45,19 @@ public class Customerinfo_Page_Step_defination {
 		if(!arg1.equals("")) {
 		System.out.println("With Data Table");
 		CustomerInfo.OpenTicket(arg1);
+		Thread.sleep(5000);
+		
 		
 		}
 		else if(!contextSteps.TicketID.equals("")){
 			System.out.println("With Global Value");
 			CustomerInfo.OpenTicket(contextSteps.TicketID);
+			Thread.sleep(5000);
 		}
 		else
 		{ System.out.println("With Name");
 			CustomerInfo.OpenTicketbyName();
+			Thread.sleep(5000);
 		}
 		System.out.println("Ticket Id in other method"+contextSteps.TicketID);
 	};
@@ -63,6 +67,7 @@ public class Customerinfo_Page_Step_defination {
 	    // Write code here that turns the phrase above into concrete actions
 		System.out.println("Customer Infomr form should be open");
 		CustomerInfo.VerifyCustomerinfopage();
+		contextSteps.Run_AccessibilityTest("Collect Customer Detail Page");
 	};
 
 	@Then("^User enter \"([^\"]*)\" and \"([^\"]*)\" in the form$")
@@ -79,6 +84,7 @@ public class Customerinfo_Page_Step_defination {
 		System.out.println("Customer Email and Phone get saved");
 		CustomerInfo.VerifyName(arg1);
 		CustomerInfo.VerifyPhone(arg2);
+		contextSteps.Run_AccessibilityTest("Collect Customer Detail Page");
 	};
 
 	@Then("^Open Assignment updated as Triage$")
@@ -86,6 +92,7 @@ public class Customerinfo_Page_Step_defination {
 	    // Write code here that turns the phrase above into concrete actions
 		System.out.println("Verify the next stage");
 		CustomerInfo.VerifyNextstage();
+		
 	};
 	
 

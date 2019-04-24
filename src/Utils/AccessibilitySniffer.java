@@ -26,9 +26,15 @@ public class AccessibilitySniffer implements IAccessibilityManager {
     public static  WebDriver driver;
     public static  JavascriptExecutor js;
     public static final String SAMPLE_CSV_FILE = "./sample"+System.currentTimeMillis()+".csv";
+    public static BufferedWriter writer;
+    public static CSVPrinter csvPrinter;
     public AccessibilitySniffer(WebDriver driver) throws IOException {
         this.driver = driver;
         js = (JavascriptExecutor) driver;
+        writer = Files.newBufferedWriter(Paths.get(SAMPLE_CSV_FILE));
+        csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT.withHeader("URL", "Page","Time of Execution", "Report Type", "Detail"));
+        
+       
     }
     
 //    public static void main(String args[]) throws IOException
@@ -48,7 +54,7 @@ public class AccessibilitySniffer implements IAccessibilityManager {
 //			runCodeSniffer("WCAG2AA",js,driver);
 //			//driver.quit();
 //    }
-    public static void runCodeSniffer(String Compliences) throws IOException {
+    public static void runCodeSniffer(String Compliences, String Page) throws IOException {
     	System.out.println("In Code For sniffer");
     	String jquery_content = Jsoup.connect("http://squizlabs.github.io/HTML_CodeSniffer/build/HTMLCS.js").ignoreContentType(true).execute().body();
     	System.out.println("Content Get Fetched");
@@ -57,15 +63,12 @@ public class AccessibilitySniffer implements IAccessibilityManager {
         js.executeScript("window.HTMLCS_RUNNER.run('"+Compliences+"');");
         System.out.println("Script Run for Specific Com");
         LogEntries logs = driver.manage().logs().get("browser");
-        try(BufferedWriter writer = Files.newBufferedWriter(Paths.get(SAMPLE_CSV_FILE)); 
-        CSVPrinter csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT
-                .withHeader("URL", "Time of Execution", "Report Type", "Detail"));
-        ){
+        
         for (LogEntry entry : logs) {
-            System.out.println(new Date(entry.getTimestamp()) + " $$" + entry.getLevel() + "$$ " + entry.getMessage());
-            csvPrinter.printRecord(driver.getCurrentUrl().toString(), new Date(entry.getTimestamp()).toString(), entry.getLevel().toString(), entry.getMessage().toString());
+            //System.out.println(new Date(entry.getTimestamp()) + " $$" + entry.getLevel() + "$$ " + entry.getMessage());
+           csvPrinter.printRecord(driver.getCurrentUrl().toString(), Page,new Date(entry.getTimestamp()).toString(), entry.getLevel().toString(), entry.getMessage().toString());
             csvPrinter.flush(); 
-        }
+        
         }
     }
         

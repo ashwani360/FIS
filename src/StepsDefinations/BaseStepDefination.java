@@ -4,12 +4,14 @@ import java.io.IOException;
 import java.lang.reflect.Field;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.lang.reflect.FieldUtils;
 import org.json.JSONException;
+import org.openqa.selenium.By;
 
 //import java.util.Base64;
 
@@ -55,11 +57,12 @@ public class BaseStepDefination extends SeleniumTest{
  	ProeprtyReader pr=new ProeprtyReader("Config.properties");
 	CreateCycleAndAddTests zp=new CreateCycleAndAddTests();
 	public AccessibilitySniffer accessibilitySniffer;
+
 	@Before
 	   public void setUp(Scenario s) throws Exception {
 	      if (!initialized) {
 	    	  System.out.println("Cycle created in :"+cyclecreated);
-	  		//Properties pr=new Properties();
+		  		//Properties pr=new Properties();
 	    	  if(!cyclecreated) {
 	  		zephyrBaseUrl=pr.getdata("ZephyreBaseURL");
 	  		accessKey=pr.getdata("AccessKey");
@@ -83,21 +86,23 @@ public class BaseStepDefination extends SeleniumTest{
 	        this.GetAllExecutions(this.getwebdriver(),Cycleid);
 			//zp.GetTestcaseId(zephyrBaseUrl, accessKey, secretKey, accountId,"FD-3");
 	        accessibilitySniffer=new AccessibilitySniffer(driver);
-	         initialized = true;
+	        initialized = true;
 	      }
 	      
 	   }
 	
 	public void addTestcaseinTestcycle(Scenario s,WebDriver dr, String Cycleid) throws JSONException, IllegalStateException, URISyntaxException, IOException
 	{  List<String> stag=(List<String>) s.getSourceTagNames();
+	Collections.sort(stag);
 //	for(int i=0;i<=stag.size()-1;i++)
 //	{
 //		System.out.println(stag.get(i).toString());
 //	}
-		System.out.println(stag.get(stag.size()-1).toString());
-		System.out.println(stag.get(stag.size()-1).toString().substring(1, stag.get(stag.size()-1).toString().length()));
+	
+		System.out.println(stag.get(0).toString());
+		System.out.println(stag.get(0).toString().substring(1, stag.get(0).toString().length()));
 		System.out.println(Cycleid.toString());
-		zp.Testcaseaddition(zephyrBaseUrl, accessKey, secretKey, accountId,projectId,versionId,Cycleid.toString(),stag.get(stag.size()-1).toString().substring(1, stag.get(stag.size()-1).toString().length()));
+		zp.Testcaseaddition(zephyrBaseUrl, accessKey, secretKey, accountId,projectId,versionId,Cycleid.toString(),stag.get(0).toString().substring(1, stag.get(0).toString().length()));
 	}
 	public void GetAllExecutions(WebDriver dr,String Cycleid) throws JSONException, IllegalStateException, URISyntaxException, IOException
 	{  //List<String> stag=(List<String>) s.getSourceTagNames();
@@ -113,6 +118,7 @@ public class BaseStepDefination extends SeleniumTest{
 		//System.out.println("Current Error in Screen"+Reporter.getCurrentTestResult().getName().toString());
 		//System.out.println("Current Error in Screen2"+Reporter.getCurrentTestResult().getStatus());
 		//System.out.println("Current Attributes"+Reporter.getCurrentTestResult().getTestContext().getCurrentXmlTest().);
+		String Error = "Test Has been Passed";
 		Field field = FieldUtils.getField(((ScenarioImpl) s).getClass(), "stepResults", true);
 		   field.setAccessible(true);
 		   try {
@@ -120,21 +126,25 @@ public class BaseStepDefination extends SeleniumTest{
 		       for (Result result : results) {
 		           if (result.getError() != null)
 		               System.out.println("Error Thrown Was:"+result.getError().toString());
-		       }
+		           System.out.println("Message for Error Thrown Was:"+result.getError().getMessage());
+		           Error="Error Thrown Was:"+result.getError().toString();
+		       } 
 		   } catch (Exception e) {
-			   System.out.println("Error while logging error");
+			   System.out.println("Error while logging error"+e.toString()+"-"+e.getMessage().toString());
+			   Error=e.toString()+"-"+e.getMessage().toString();
 		   }
 		
 		List<String> stag=(List<String>) s.getSourceTagNames();
-		this.tidyUp(s,this.getwebdriver(),zephyrBaseUrl,accessKey,secretKey,accountId,projectId,versionId,CurrentExecutionID,Cycleid.toString(),stag.get(stag.size()-1).toString().substring(1, stag.get(stag.size()-1).toString().length()));
-		 initialized = false;
+		this.tidyUp(Error,s,this.getwebdriver(),zephyrBaseUrl,accessKey,secretKey,accountId,projectId,versionId,CurrentExecutionID,Cycleid.toString(),stag.get(stag.size()-1).toString().substring(1, stag.get(stag.size()-1).toString().length()));
+
+		initialized = false;
 	}
 	
 	@Then("^Run the Accessibility Test$") 
-	public void Run_AccessibilityTest() throws Throwable{
+	public void Run_AccessibilityTest(String page) throws Throwable{
 
 	    System.out.println("In Accessibilty Test for:"+pr.getdata("Accessibility_Comp"));
-	    accessibilitySniffer.runCodeSniffer(pr.getdata("Accessibility_Comp"));
+	    accessibilitySniffer.runCodeSniffer(pr.getdata("Accessibility_Comp"),page);
 	    //Thread.sleep(2000);
 	};	
 	

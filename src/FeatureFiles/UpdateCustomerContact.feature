@@ -6,7 +6,7 @@ Then User Enters UserName and Password in the login form
 And Click on the login button
 Then User is on the Home Page
 
-@53572 @Sanity @Regression @Smoke
+@53573 @Sanity @Regression @Smoke
 Scenario Outline: User is opening an Service Request and update the Cutomer Details
 When User is click on a "<Ticket>" with name Collect Customer infomration
 Then Cutomer Detail form should be open

@@ -8,7 +8,7 @@ Then User Enters UserName and Password in the login form
 And Click on the login button
 Then User is on the Home Page
 
-@53572 @Sanity @Regression @Smoke
+@53578 @Sanity @Regression @Smoke
 Scenario Outline:User is opening an Service Request and update the Customer Satisfaction
 When User is click on a "<Ticket>" with name Resolve
 Then Customer Satisfaction Form should be open
@@ -20,7 +20,7 @@ Then Thank you message will get displayed
 
 Examples:
 | Ticket | Description |
-| SR-87   | 10         |
+|        | 10          |
 
 
 

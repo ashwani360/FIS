@@ -22,6 +22,9 @@ import org.openqa.selenium.remote.CapabilityType;
 //import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.FluentWait;
+
 import java.io.File;
 import com.cucumber.listener.Reporter;
 //import com.vimalselvam.cucumber.listener.Reporter;
@@ -29,8 +32,6 @@ import com.cucumber.listener.Reporter;
 import com.google.common.io.Files;
 import cucumber.api.Scenario;
 
-
-import org.openqa.selenium.WebDriver;
 //import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -46,6 +47,7 @@ public class SeleniumTest {
 	public String browserVersion;
 	//----------------------------------------------------------------------------
 	CreateCycleAndAddTests zp=new CreateCycleAndAddTests();
+	
 
 	public void Launchbrowser() throws Exception 
       {
@@ -122,7 +124,7 @@ public class SeleniumTest {
 //		System.out.println(testcaseid.get(0));
 //		
 //	}
-	public void tidyUp(Scenario s,WebDriver getwebdriver,String zephyrBaseUrl, String accessKey, String secretKey, String accountId, Long projectId, Long versionId, Map<String, String> CurrentExecutionID, String CycleID, String TestcaseID) throws IOException, IllegalStateException, JSONException, URISyntaxException 
+	public void tidyUp(String comment,Scenario s,WebDriver getwebdriver,String zephyrBaseUrl, String accessKey, String secretKey, String accountId, Long projectId, Long versionId, Map<String, String> CurrentExecutionID, String CycleID, String TestcaseID) throws IOException, IllegalStateException, JSONException, URISyntaxException, InterruptedException 
 		{   
 			 if (s.isFailed()) {
 				 
@@ -146,7 +148,7 @@ public class SeleniumTest {
 						List<String> stag=(List<String>) s.getSourceTagNames();
 						String value = CurrentExecutionID.get(stag.get(stag.size()-1).toString().substring(1, stag.get(stag.size()-1).toString().length()));
 						System.out.println("Execution ID need to Faild is"+value);
-						zp.UpdateStatus(zephyrBaseUrl, accessKey, secretKey,accountId,projectId,versionId, "2", CurrentExecutionID, CycleID, TestcaseID);
+						zp.UpdateStatus(zephyrBaseUrl, accessKey, secretKey,accountId,projectId,versionId, "2", CurrentExecutionID, CycleID, TestcaseID,comment);
 					} catch (IOException e) {
 					} 
 			 }
@@ -155,10 +157,10 @@ public class SeleniumTest {
 				 List<String> stag=(List<String>) s.getSourceTagNames();
 					String value = CurrentExecutionID.get(stag.get(stag.size()-1).toString().substring(1, stag.get(stag.size()-1).toString().length()));
 					System.out.println("Execution ID need to Pass is"+value);
-					zp.UpdateStatus(zephyrBaseUrl, accessKey, secretKey,accountId,projectId,versionId, "1", CurrentExecutionID, CycleID, TestcaseID);
+					zp.UpdateStatus(zephyrBaseUrl, accessKey, secretKey,accountId,projectId,versionId, "1", CurrentExecutionID, CycleID, TestcaseID,comment);
 			 }
-			 
-			 driver.quit();
+				
+				driver.quit();
 		}
 	
 

@@ -44,4 +44,10 @@ public class CustomerInfo {
     @FindBy(xpath="//h2[text()='Open assignments']/parent::*/parent::*/following-sibling::*/div//a[1]")
 
     public WebElement Nextstage;
+    @FindBy(xpath="//div[@class='layout layout-noheader layout-noheader-portal_header']/div/div/div[5]/div")
+
+    public WebElement Profile;
+    @FindBy(xpath="//span[text()='Log off']")
+
+    public WebElement Logoff;
 }
