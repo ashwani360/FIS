@@ -19,7 +19,7 @@ features = {"src/FeatureFiles/Google_Search.feature"},glue = { "StepsDefinations
 
 plugin = { "com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/report.html"},
 tags = {"@Regression"},
-dryRun=false
+dryRun=true
 )
 
 public class Search extends AbstractTestNGCucumberTests  {

@@ -51,6 +51,7 @@ public class BaseStepDefination extends SeleniumTest{
  	public static String Cycleid ;
  	public static boolean cyclecreated=false;
  	public static Map<String, String> CurrentExecutionID = new HashMap<String, String>();
+ 	public static String TicketID="";
  	ProeprtyReader pr=new ProeprtyReader("Config.properties");
 	CreateCycleAndAddTests zp=new CreateCycleAndAddTests();
 	public AccessibilitySniffer accessibilitySniffer;

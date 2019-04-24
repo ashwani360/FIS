@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite thread-count="2" configfailurepolicy="continue" guice-stage="DEVELOPMENT" name="Failed suite [BDD Test Suite]" parallel="tests">
-  <test thread-count="2" name="Login and Update Profile Test(failed)" parallel="tests">
+  <test thread-count="2" name="Update Contact Information(failed)" parallel="tests">
     <classes>
-      <class name="Runners.Search">
+      <class name="Runners.CustomerInfo">
         <methods>
           <include name="setUpClass"/>
-          <include name="feature"/>
           <include name="writeExtentReport"/>
+          <include name="feature" invocation-numbers="0"/>
           <include name="tearDownClass"/>
         </methods>
-      </class> <!-- Runners.Search -->
+      </class> <!-- Runners.CustomerInfo -->
     </classes>
-  </test> <!-- Login and Update Profile Test(failed) -->
+  </test> <!-- Update Contact Information(failed) -->
 </suite> <!-- Failed suite [BDD Test Suite] -->

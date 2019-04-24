@@ -37,7 +37,6 @@ public class Detail_Page_Step_Definations {
 
 	@Given("^Detail Page will open$") 
 	public void Detail_Page_will_open() throws Throwable{
-
 	    System.out.println("Deposit In step 2");
 	    detailPage.verifyDetailPage();
 	    Thread.sleep(2000);

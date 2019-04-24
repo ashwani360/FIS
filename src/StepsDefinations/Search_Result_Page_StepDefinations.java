@@ -28,7 +28,7 @@ import cucumber.api.java.en.When;
 //import org.testng.ITestResult;
 //import org.testng.TestListenerAdapter;
 
-public class Search_Result_Page_StepDefinations {
+public class Search_Result_Page_StepDefinations{
 
 	private BaseStepDefination contextSteps;
 	private SearchResultPageHelper Searchresult;
