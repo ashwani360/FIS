@@ -52,7 +52,7 @@ public class CustomerSatisfactionPage_Helper extends CustomerSatisfaction {
 		Thread.sleep(1000);
 		ApplyFilterbutton.click();
 		Thread.sleep(5000);
-		if(pr.getdata("ZephyreBaseURL").equals("Parallel"))
+		if(pr.getdata("Runmod").equals("Parallel"))
 		{
 		OpenTicketbyName();
 		}
