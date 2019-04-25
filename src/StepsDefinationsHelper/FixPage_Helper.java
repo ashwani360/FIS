@@ -53,7 +53,7 @@ public class FixPage_Helper extends Fix {
 		Thread.sleep(5000);
 		ApplyFilterbutton.click();
 		Thread.sleep(5000);
-		if(pr.getdata("ZephyreBaseURL").equals("Parallel"))
+		if(pr.getdata("Runmod").equals("Parallel"))
 		{
 		OpenTicketbyName();
 		}
