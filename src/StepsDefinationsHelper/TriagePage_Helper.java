@@ -53,7 +53,7 @@ public class TriagePage_Helper extends Triage {
 		Filterdatainput.sendKeys(arg1);
 		ApplyFilterbutton.click();
 		Thread.sleep(5000);
-		if(pr.getdata("ZephyreBaseURL").equals("Parallel"))
+		if(pr.getdata("Runmod").equals("Parallel"))
 		{
 		OpenTicketbyName();
 		}
