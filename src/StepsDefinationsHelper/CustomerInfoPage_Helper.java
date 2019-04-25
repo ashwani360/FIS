@@ -50,7 +50,7 @@ public class CustomerInfoPage_Helper extends CustomerInfo {
 		Thread.sleep(1000);
 		ApplyFilterbutton.click();
 		Thread.sleep(5000);
-		if(pr.getdata("ZephyreBaseURL").equals("Parallel"))
+		if(pr.getdata("Runmod").equals("Parallel"))
 		{
 		OpenTicketbyName();
 		}
