@@ -45,19 +45,20 @@ public class CustomerSatisfactionPage_Helper extends CustomerSatisfaction {
 		driver.switchTo().defaultContent();
 	}
 	public void OpenTicketinresolve(String arg1,String Mod) throws InterruptedException {
-		driver.switchTo().frame("PegaGadget0Ifr");
-		filterbyCaseid.click();
-		Thread.sleep(1000);
-		Filterdatainput.sendKeys(arg1);
-		Thread.sleep(1000);
-		ApplyFilterbutton.click();
-		Thread.sleep(5000);
+		
+		
 		if(pr.getdata("Runmod").equals("Parallel"))
 		{
 		OpenTicketbyName();
 		}
 		else {
-		
+			driver.switchTo().frame("PegaGadget0Ifr");
+			filterbyCaseid.click();
+			Thread.sleep(1000);
+			Filterdatainput.sendKeys(arg1);
+			Thread.sleep(1000);
+			ApplyFilterbutton.click();
+			Thread.sleep(5000);
 		 Ticketlink.click();
 		}
 		Thread.sleep(5000);
