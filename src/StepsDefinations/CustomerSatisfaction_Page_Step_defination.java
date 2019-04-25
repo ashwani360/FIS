@@ -42,14 +42,15 @@ public class CustomerSatisfaction_Page_Step_defination {
 	public void user_is_click_on_a_with_name_Fix(String arg1) throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
 	    //throw new PendingException();
+		
 		if(!arg1.equals("")) {
 			System.out.println("A ticket with Fixed State has been open");
-			CustomerSatisfaction.OpenTicketinresolve(arg1);
+			CustomerSatisfaction.OpenTicketinresolve(arg1,"Data");
 			Thread.sleep(5000);
 		}
 		else if(!contextSteps.TicketID.equals("")) {
 			System.out.println("A ticket with Fixed State has been open");
-			CustomerSatisfaction.OpenTicketinresolve(contextSteps.TicketID);
+			CustomerSatisfaction.OpenTicketinresolve(contextSteps.TicketID,"Var");
 			Thread.sleep(5000);
 		}
 		
@@ -58,6 +59,7 @@ public class CustomerSatisfaction_Page_Step_defination {
 			CustomerSatisfaction.OpenTicketbyName();
 			Thread.sleep(5000);
 		}
+		
 	};
 
 	@Then("^Customer Satisfaction Form should be open$")

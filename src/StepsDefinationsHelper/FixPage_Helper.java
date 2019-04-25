@@ -19,6 +19,7 @@ import junit.framework.Assert;
 public class FixPage_Helper extends Fix {
 	public WebDriver driver;
 	Wait<WebDriver> wait;
+	ProeprtyReader pr=new ProeprtyReader("Config.properties");
 	public FixPage_Helper(WebDriver driver) {
 		// this.driver = driver;
 		this.driver=driver;
@@ -36,7 +37,7 @@ public class FixPage_Helper extends Fix {
 		driver.switchTo().frame("PegaGadget0Ifr");
 		filterbyName.click();
 		Thread.sleep(1000);
-		Filterdatainput.sendKeys("Collect customer details");
+		Filterdatainput.sendKeys("Fix");
 		Thread.sleep(1000);
 		ApplyFilterbutton.click();
 		Thread.sleep(5000);
@@ -44,7 +45,7 @@ public class FixPage_Helper extends Fix {
 		Thread.sleep(5000);
 		driver.switchTo().defaultContent();
 	}
-	public void OpenTicketinfix(String arg1) throws InterruptedException {
+	public void OpenTicketinfix(String arg1,String Mod) throws InterruptedException {
 		driver.switchTo().frame("PegaGadget0Ifr");
 		filterbyCaseid.click();
 		Thread.sleep(5000);
@@ -52,7 +53,14 @@ public class FixPage_Helper extends Fix {
 		Thread.sleep(5000);
 		ApplyFilterbutton.click();
 		Thread.sleep(5000);
-		Ticketlink.click();
+		if(pr.getdata("ZephyreBaseURL").equals("Parallel"))
+		{
+		OpenTicketbyName();
+		}
+		else {
+		
+		 Ticketlink.click();
+		}
 		Thread.sleep(5000);
 		driver.switchTo().defaultContent();
 	}

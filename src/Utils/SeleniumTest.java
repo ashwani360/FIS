@@ -3,6 +3,7 @@ package Utils;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
@@ -146,7 +147,8 @@ public class SeleniumTest {
 						//This attach the specified screenshot to the test
 					Reporter.addScreenCaptureFromPath(sourcePath);
 						List<String> stag=(List<String>) s.getSourceTagNames();
-						String value = CurrentExecutionID.get(stag.get(stag.size()-1).toString().substring(1, stag.get(stag.size()-1).toString().length()));
+						Collections.sort(stag);
+						String value = CurrentExecutionID.get(stag.get(0).toString().substring(1, stag.get(0).toString().length()));
 						System.out.println("Execution ID need to Faild is"+value);
 						zp.UpdateStatus(zephyrBaseUrl, accessKey, secretKey,accountId,projectId,versionId, "2", CurrentExecutionID, CycleID, TestcaseID,comment);
 					} catch (IOException e) {
@@ -155,7 +157,8 @@ public class SeleniumTest {
 			 else{
 				 System.out.println("Passed");
 				 List<String> stag=(List<String>) s.getSourceTagNames();
-					String value = CurrentExecutionID.get(stag.get(stag.size()-1).toString().substring(1, stag.get(stag.size()-1).toString().length()));
+				 Collections.sort(stag);
+					String value = CurrentExecutionID.get(stag.get(0).toString().substring(1, stag.get(0).toString().length()));
 					System.out.println("Execution ID need to Pass is"+value);
 					zp.UpdateStatus(zephyrBaseUrl, accessKey, secretKey,accountId,projectId,versionId, "1", CurrentExecutionID, CycleID, TestcaseID,comment);
 			 }

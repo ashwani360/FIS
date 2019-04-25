@@ -1,21 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="2" passed="1">
+<testng-results skipped="0" failed="4" ignored="0" total="5" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="BDD Test Suite" duration-ms="50533" started-at="2019-04-24T04:21:46Z" finished-at="2019-04-24T04:22:37Z">
+  <suite name="BDD Test Suite" duration-ms="204399" started-at="2019-04-24T22:53:41Z" finished-at="2019-04-24T22:57:05Z">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:Runners.CreateNew@55d56113]" name="feature" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
         <method signature="AbstractTestNGCucumberTests.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:Runners.CustomerInfo@18eed359]" name="feature" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:Runners.Triage@2b2948e2]" name="feature" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:Runners.Fix@7d907bac]" name="feature" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:Runners.CustomerSatisfaction@61f8bee4]" name="feature" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test name="Create New Ticket" duration-ms="34028" started-at="2019-04-24T04:21:46Z" finished-at="2019-04-24T04:22:20Z">
+    <test name="Create New Ticket" duration-ms="79141" started-at="2019-04-24T22:53:41Z" finished-at="2019-04-24T22:55:00Z">
       <class name="Runners.CreateNew">
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:Runners.CreateNew@55d56113]" name="setUpClass" is-config="true" duration-ms="204" started-at="2019-04-24T04:21:46Z" finished-at="2019-04-24T04:21:47Z">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:Runners.CreateNew@55d56113]" name="setUpClass" is-config="true" duration-ms="208" started-at="2019-04-24T22:53:41Z" finished-at="2019-04-24T22:53:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:Runners.CreateNew@55d56113]" name="feature" duration-ms="33522" started-at="2019-04-24T04:21:47Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2019-04-24T04:22:20Z">
+        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:Runners.CreateNew@55d56113]" name="feature" duration-ms="78626" started-at="2019-04-24T22:53:41Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2019-04-24T22:54:59Z">
           <params>
             <param index="0">
               <value>
@@ -26,23 +29,23 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- feature -->
-        <test-method status="PASS" signature="writeExtentReport()[pri:0, instance:Runners.CreateNew@55d56113]" name="writeExtentReport" is-config="true" duration-ms="11" started-at="2019-04-24T04:22:20Z" finished-at="2019-04-24T04:22:20Z">
+        <test-method status="PASS" signature="writeExtentReport()[pri:0, instance:Runners.CreateNew@55d56113]" name="writeExtentReport" is-config="true" duration-ms="12" started-at="2019-04-24T22:54:59Z" finished-at="2019-04-24T22:54:59Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- writeExtentReport -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:Runners.CreateNew@55d56113]" name="tearDownClass" is-config="true" duration-ms="221" started-at="2019-04-24T04:22:20Z" finished-at="2019-04-24T04:22:20Z">
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:Runners.CreateNew@55d56113]" name="tearDownClass" is-config="true" duration-ms="235" started-at="2019-04-24T22:54:59Z" finished-at="2019-04-24T22:55:00Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
       </class> <!-- Runners.CreateNew -->
     </test> <!-- Create New Ticket -->
-    <test name="Update Contact Information" duration-ms="50533" started-at="2019-04-24T04:21:46Z" finished-at="2019-04-24T04:22:37Z">
+    <test name="Update Contact Information" duration-ms="88953" started-at="2019-04-24T22:53:41Z" finished-at="2019-04-24T22:55:09Z">
       <class name="Runners.CustomerInfo">
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:Runners.CustomerInfo@18eed359]" name="setUpClass" is-config="true" duration-ms="204" started-at="2019-04-24T04:21:46Z" finished-at="2019-04-24T04:21:47Z">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:Runners.CustomerInfo@18eed359]" name="setUpClass" is-config="true" duration-ms="204" started-at="2019-04-24T22:53:41Z" finished-at="2019-04-24T22:53:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method status="FAIL" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:Runners.CustomerInfo@18eed359]" name="feature" duration-ms="50216" started-at="2019-04-24T04:21:47Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2019-04-24T04:22:37Z">
+        <test-method status="FAIL" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:Runners.CustomerInfo@18eed359]" name="feature" duration-ms="88626" started-at="2019-04-24T22:53:41Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2019-04-24T22:55:09Z">
           <params>
             <param index="0">
               <value>
@@ -52,30 +55,16 @@
           </params>
           <exception class="cucumber.runtime.CucumberException">
             <message>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='Collect customer details']"}
-  (Session info: chrome=73.0.3683.103)
-  (Driver info: chromedriver=73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72),platform=Windows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+              <![CDATA[org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: '360NDCPC104', ip: '10.148.0.73', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_191'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 73.0.3683.68 (47787ec04b6e3..., userDataDir: C:\Users\akashs\AppData\Loc...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:60454}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 73.0.3683.103, webStorageEnabled: true}
-Session ID: f6ce318e245c993ce0abaefb62dace6c
-*** Element info: {Using=xpath, value=//span[text()='Collect customer details']}]]>
+Driver info: driver.version: RemoteWebDriver]]>
             </message>
             <full-stacktrace>
-              <![CDATA[cucumber.runtime.CucumberException: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='Collect customer details']"}
-  (Session info: chrome=73.0.3683.103)
-  (Driver info: chromedriver=73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72),platform=Windows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+              <![CDATA[cucumber.runtime.CucumberException: org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: '360NDCPC104', ip: '10.148.0.73', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_191'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 73.0.3683.68 (47787ec04b6e3..., userDataDir: C:\Users\akashs\AppData\Loc...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:60454}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 73.0.3683.103, webStorageEnabled: true}
-Session ID: f6ce318e245c993ce0abaefb62dace6c
-*** Element info: {Using=xpath, value=//span[text()='Collect customer details']}
+Driver info: driver.version: RemoteWebDriver
 at cucumber.api.testng.TestNGCucumberRunner.runCucumber(TestNGCucumberRunner.java:69)
 at cucumber.api.testng.AbstractTestNGCucumberTests.feature(AbstractTestNGCucumberTests.java:21)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -98,7 +87,124 @@ at java.util.concurrent.FutureTask.run(Unknown Source)
 at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
 at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
 at java.lang.Thread.run(Unknown Source)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='Collect customer details']"}
+Caused by: org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: '360NDCPC104', ip: '10.148.0.73', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_191'
+Driver info: driver.version: RemoteWebDriver
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:125)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:489)
+at Utils.AccessibilitySniffer.runCodeSniffer(AccessibilitySniffer.java:61)
+at StepsDefinations.BaseStepDefination.Run_AccessibilityTest(BaseStepDefination.java:188)
+at StepsDefinations.CreateNew_Page_Step_defination.user_Click_on_the_Submit_button(CreateNew_Page_Step_defination.java:94)
+at ✽.When User Click on the Submit button(src/FeatureFiles/UpdateCustomerContact.feature:16)
+]]>
+            </full-stacktrace>
+          </exception> <!-- cucumber.runtime.CucumberException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- feature -->
+        <test-method status="PASS" signature="writeExtentReport()[pri:0, instance:Runners.CustomerInfo@18eed359]" name="writeExtentReport" is-config="true" duration-ms="3" started-at="2019-04-24T22:55:09Z" finished-at="2019-04-24T22:55:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- writeExtentReport -->
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:Runners.CustomerInfo@18eed359]" name="tearDownClass" is-config="true" duration-ms="53" started-at="2019-04-24T22:55:09Z" finished-at="2019-04-24T22:55:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- Runners.CustomerInfo -->
+    </test> <!-- Update Contact Information -->
+    <test name="Update the Service Request to Fix" duration-ms="62522" started-at="2019-04-24T22:55:10Z" finished-at="2019-04-24T22:56:12Z">
+      <class name="Runners.Fix">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:Runners.Fix@7d907bac]" name="setUpClass" is-config="true" duration-ms="20" started-at="2019-04-24T22:55:10Z" finished-at="2019-04-24T22:55:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method status="FAIL" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:Runners.Fix@7d907bac]" name="feature" duration-ms="62449" started-at="2019-04-24T22:55:10Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2019-04-24T22:56:12Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[User is able to update the Ticket with the Fix Description]]>
+              </value>
+            </param>
+          </params>
+          <exception class="cucumber.runtime.CucumberException">
+            <message>
+              <![CDATA[org.openqa.selenium.NoSuchFrameException: No frame element found by name or id PegaGadget0Ifr
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: '360NDCPC104', ip: '10.148.0.73', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_191'
+Driver info: driver.version: unknown]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[cucumber.runtime.CucumberException: org.openqa.selenium.NoSuchFrameException: No frame element found by name or id PegaGadget0Ifr
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: '360NDCPC104', ip: '10.148.0.73', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_191'
+Driver info: driver.version: unknown
+at cucumber.api.testng.TestNGCucumberRunner.runCucumber(TestNGCucumberRunner.java:69)
+at cucumber.api.testng.AbstractTestNGCucumberTests.feature(AbstractTestNGCucumberTests.java:21)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:988)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.access$000(SuiteRunner.java:40)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)
+at org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
+at java.util.concurrent.FutureTask.run(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+at java.lang.Thread.run(Unknown Source)
+Caused by: org.openqa.selenium.NoSuchFrameException: No frame element found by name or id PegaGadget0Ifr
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: '360NDCPC104', ip: '10.148.0.73', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_191'
+Driver info: driver.version: unknown
+at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.frame(RemoteWebDriver.java:885)
+at StepsDefinationsHelper.FixPage_Helper.OpenTicketbyName(FixPage_Helper.java:36)
+at StepsDefinationsHelper.FixPage_Helper.OpenTicketinfix(FixPage_Helper.java:64)
+at StepsDefinations.Fix_Page_Step_defination.user_is_click_on_a_with_name_Fix(Fix_Page_Step_defination.java:53)
+at ✽.When User is click on a "" with name Fix(src/FeatureFiles/Fix.feature:12)
+]]>
+            </full-stacktrace>
+          </exception> <!-- cucumber.runtime.CucumberException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- feature -->
+        <test-method status="PASS" signature="writeExtentReport()[pri:0, instance:Runners.Fix@7d907bac]" name="writeExtentReport" is-config="true" duration-ms="4" started-at="2019-04-24T22:56:12Z" finished-at="2019-04-24T22:56:12Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- writeExtentReport -->
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:Runners.Fix@7d907bac]" name="tearDownClass" is-config="true" duration-ms="36" started-at="2019-04-24T22:56:12Z" finished-at="2019-04-24T22:56:12Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- Runners.Fix -->
+    </test> <!-- Update the Service Request to Fix -->
+    <test name="Triage the Service Request" duration-ms="75581" started-at="2019-04-24T22:55:00Z" finished-at="2019-04-24T22:56:15Z">
+      <class name="Runners.Triage">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:Runners.Triage@2b2948e2]" name="setUpClass" is-config="true" duration-ms="16" started-at="2019-04-24T22:55:00Z" finished-at="2019-04-24T22:55:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method status="FAIL" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:Runners.Triage@2b2948e2]" name="feature" duration-ms="75513" started-at="2019-04-24T22:55:00Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2019-04-24T22:56:15Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[User is able to Triage a ticket]]>
+              </value>
+            </param>
+          </params>
+          <exception class="cucumber.runtime.CucumberException">
+            <message>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//label[text()='Priority']/parent::*//select"}
   (Session info: chrome=73.0.3683.103)
   (Driver info: chromedriver=73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72),platform=Windows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)
 Command duration or timeout: 0 milliseconds
@@ -106,9 +212,55 @@ For documentation on this error, please visit: https://www.seleniumhq.org/except
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: '360NDCPC104', ip: '10.148.0.73', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_191'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 73.0.3683.68 (47787ec04b6e3..., userDataDir: C:\Users\akashs\AppData\Loc...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:60454}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 73.0.3683.103, webStorageEnabled: true}
-Session ID: f6ce318e245c993ce0abaefb62dace6c
-*** Element info: {Using=xpath, value=//span[text()='Collect customer details']}
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 73.0.3683.68 (47787ec04b6e3..., userDataDir: C:\Users\akashs\AppData\Loc...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:54716}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 73.0.3683.103, webStorageEnabled: true}
+Session ID: fe67db21e36e025acc6b225528e25688
+*** Element info: {Using=xpath, value=//label[text()='Priority']/parent::*//select}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[cucumber.runtime.CucumberException: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//label[text()='Priority']/parent::*//select"}
+  (Session info: chrome=73.0.3683.103)
+  (Driver info: chromedriver=73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72),platform=Windows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: '360NDCPC104', ip: '10.148.0.73', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_191'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 73.0.3683.68 (47787ec04b6e3..., userDataDir: C:\Users\akashs\AppData\Loc...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:54716}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 73.0.3683.103, webStorageEnabled: true}
+Session ID: fe67db21e36e025acc6b225528e25688
+*** Element info: {Using=xpath, value=//label[text()='Priority']/parent::*//select}
+at cucumber.api.testng.TestNGCucumberRunner.runCucumber(TestNGCucumberRunner.java:69)
+at cucumber.api.testng.AbstractTestNGCucumberTests.feature(AbstractTestNGCucumberTests.java:21)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:988)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.access$000(SuiteRunner.java:40)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)
+at org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
+at java.util.concurrent.FutureTask.run(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+at java.lang.Thread.run(Unknown Source)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//label[text()='Priority']/parent::*//select"}
+  (Session info: chrome=73.0.3683.103)
+  (Driver info: chromedriver=73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72),platform=Windows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: '360NDCPC104', ip: '10.148.0.73', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_191'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 73.0.3683.68 (47787ec04b6e3..., userDataDir: C:\Users\akashs\AppData\Loc...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:54716}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 73.0.3683.103, webStorageEnabled: true}
+Session ID: fe67db21e36e025acc6b225528e25688
+*** Element info: {Using=xpath, value=//label[text()='Priority']/parent::*//select}
 at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
 at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
@@ -127,25 +279,99 @@ at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
 at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
 at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at com.sun.proxy.$Proxy20.isDisplayed(Unknown Source)
-at StepsDefinationsHelper.CustomerInfoPage_Helper.VerifyCustomerinfopage(CustomerInfoPage_Helper.java:51)
-at StepsDefinations.Customerinfo_Page_Step_defination.cutomer_Detail_form_should_be_open(Customerinfo_Page_Step_defination.java:65)
-at ✽.Then Cutomer Detail form should be open(src/FeatureFiles/UpdateCustomerContact.feature:12)
+at com.sun.proxy.$Proxy20.getTagName(Unknown Source)
+at org.openqa.selenium.support.ui.Select.<init>(Select.java:45)
+at StepsDefinationsHelper.TriagePage_Helper.SelectPriority(TriagePage_Helper.java:75)
+at StepsDefinations.Triage_Page_Step_defination.user_enter_of_the_Ticket(Triage_Page_Step_defination.java:78)
+at ✽.And User enter "High" of the Ticket(src/FeatureFiles/Triage.feature:14)
 ]]>
             </full-stacktrace>
           </exception> <!-- cucumber.runtime.CucumberException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- feature -->
-        <test-method status="PASS" signature="writeExtentReport()[pri:0, instance:Runners.CustomerInfo@18eed359]" name="writeExtentReport" is-config="true" duration-ms="5" started-at="2019-04-24T04:22:37Z" finished-at="2019-04-24T04:22:37Z">
+        <test-method status="PASS" signature="writeExtentReport()[pri:0, instance:Runners.Triage@2b2948e2]" name="writeExtentReport" is-config="true" duration-ms="4" started-at="2019-04-24T22:56:15Z" finished-at="2019-04-24T22:56:15Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- writeExtentReport -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:Runners.CustomerInfo@18eed359]" name="tearDownClass" is-config="true" duration-ms="44" started-at="2019-04-24T04:22:37Z" finished-at="2019-04-24T04:22:37Z">
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:Runners.Triage@2b2948e2]" name="tearDownClass" is-config="true" duration-ms="40" started-at="2019-04-24T22:56:15Z" finished-at="2019-04-24T22:56:15Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
-      </class> <!-- Runners.CustomerInfo -->
-    </test> <!-- Update Contact Information -->
+      </class> <!-- Runners.Triage -->
+    </test> <!-- Triage the Service Request -->
+    <test name="Close the Resolved Service Request" duration-ms="52899" started-at="2019-04-24T22:56:12Z" finished-at="2019-04-24T22:57:05Z">
+      <class name="Runners.CustomerSatisfaction">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:Runners.CustomerSatisfaction@61f8bee4]" name="setUpClass" is-config="true" duration-ms="16" started-at="2019-04-24T22:56:12Z" finished-at="2019-04-24T22:56:12Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method status="FAIL" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:Runners.CustomerSatisfaction@61f8bee4]" name="feature" duration-ms="52839" started-at="2019-04-24T22:56:12Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2019-04-24T22:57:05Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[User is able to update Customer Satisfaction form]]>
+              </value>
+            </param>
+          </params>
+          <exception class="cucumber.runtime.CucumberException">
+            <message>
+              <![CDATA[org.openqa.selenium.NoSuchFrameException: No frame element found by name or id PegaGadget0Ifr
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: '360NDCPC104', ip: '10.148.0.73', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_191'
+Driver info: driver.version: unknown]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[cucumber.runtime.CucumberException: org.openqa.selenium.NoSuchFrameException: No frame element found by name or id PegaGadget0Ifr
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: '360NDCPC104', ip: '10.148.0.73', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_191'
+Driver info: driver.version: unknown
+at cucumber.api.testng.TestNGCucumberRunner.runCucumber(TestNGCucumberRunner.java:69)
+at cucumber.api.testng.AbstractTestNGCucumberTests.feature(AbstractTestNGCucumberTests.java:21)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:988)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.access$000(SuiteRunner.java:40)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)
+at org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
+at java.util.concurrent.FutureTask.run(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+at java.lang.Thread.run(Unknown Source)
+Caused by: org.openqa.selenium.NoSuchFrameException: No frame element found by name or id PegaGadget0Ifr
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: '360NDCPC104', ip: '10.148.0.73', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_191'
+Driver info: driver.version: unknown
+at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.frame(RemoteWebDriver.java:885)
+at StepsDefinationsHelper.CustomerSatisfactionPage_Helper.OpenTicketbyName(CustomerSatisfactionPage_Helper.java:35)
+at StepsDefinationsHelper.CustomerSatisfactionPage_Helper.OpenTicketinresolve(CustomerSatisfactionPage_Helper.java:63)
+at StepsDefinations.CustomerSatisfaction_Page_Step_defination.user_is_click_on_a_with_name_Fix(CustomerSatisfaction_Page_Step_defination.java:53)
+at ✽.When User is click on a "" with name Resolve(src/FeatureFiles/CustomerSatisfaction.feature:13)
+]]>
+            </full-stacktrace>
+          </exception> <!-- cucumber.runtime.CucumberException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- feature -->
+        <test-method status="PASS" signature="writeExtentReport()[pri:0, instance:Runners.CustomerSatisfaction@61f8bee4]" name="writeExtentReport" is-config="true" duration-ms="0" started-at="2019-04-24T22:57:05Z" finished-at="2019-04-24T22:57:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- writeExtentReport -->
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:Runners.CustomerSatisfaction@61f8bee4]" name="tearDownClass" is-config="true" duration-ms="40" started-at="2019-04-24T22:57:05Z" finished-at="2019-04-24T22:57:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- Runners.CustomerSatisfaction -->
+    </test> <!-- Close the Resolved Service Request -->
   </suite> <!-- BDD Test Suite -->
 </testng-results>

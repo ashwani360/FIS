@@ -23,6 +23,9 @@ public class Triage {
     @FindBy(xpath="//div[text()='Case']/parent::*/parent::*/parent::*/parent::*/following-sibling::*/td[3]//a")
 
     public WebElement Ticketlink;
+    @FindBy(xpath="//div[text()='Case']/parent::*/parent::*/parent::*/parent::*/following-sibling::*/td[2]//a")
+
+    public WebElement FilterTicketlinkName;
     @FindBy(xpath="//span[text()='Triage']")
 
     public WebElement Triagepage;

@@ -42,16 +42,17 @@ public class Customerinfo_Page_Step_defination {
 	public void user_is_click_on_a_with_name_Collect_Customer_infomration(String arg1) throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
 		System.out.println("Open a Ticket in Collect Customer Information");
+		
 		if(!arg1.equals("")) {
 		System.out.println("With Data Table");
-		CustomerInfo.OpenTicket(arg1);
+		CustomerInfo.OpenTicket(arg1,"Data");
 		Thread.sleep(5000);
 		
 		
 		}
 		else if(!contextSteps.TicketID.equals("")){
 			System.out.println("With Global Value");
-			CustomerInfo.OpenTicket(contextSteps.TicketID);
+			CustomerInfo.OpenTicket(contextSteps.TicketID,"Var");
 			Thread.sleep(5000);
 		}
 		else
@@ -59,6 +60,7 @@ public class Customerinfo_Page_Step_defination {
 			CustomerInfo.OpenTicketbyName();
 			Thread.sleep(5000);
 		}
+		
 		System.out.println("Ticket Id in other method"+contextSteps.TicketID);
 	};
 

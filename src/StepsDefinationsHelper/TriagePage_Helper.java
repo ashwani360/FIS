@@ -20,6 +20,7 @@ import junit.framework.Assert;
 public class TriagePage_Helper extends Triage {
 	public WebDriver driver;
 	Wait<WebDriver> wait;
+	ProeprtyReader pr=new ProeprtyReader("Config.properties");
 	public TriagePage_Helper(WebDriver driver) {
 		// this.driver = driver;
 		this.driver=driver;
@@ -35,7 +36,7 @@ public class TriagePage_Helper extends Triage {
 		driver.switchTo().frame("PegaGadget0Ifr");
 		filterbyName.click();
 		Thread.sleep(1000);
-		Filterdatainput.sendKeys("Collect customer details");
+		Filterdatainput.sendKeys("Triage");
 		Thread.sleep(1000);
 		ApplyFilterbutton.click();
 		Thread.sleep(5000);
@@ -45,14 +46,21 @@ public class TriagePage_Helper extends Triage {
 	}
 
 	
-	public void OpenTicketforTriage(String arg1) throws InterruptedException {
+	public void OpenTicketforTriage(String arg1,String Mod) throws InterruptedException {
 		driver.switchTo().frame("PegaGadget0Ifr");
 		filterbyCaseid.click();
 		Thread.sleep(5000);
 		Filterdatainput.sendKeys(arg1);
 		ApplyFilterbutton.click();
 		Thread.sleep(5000);
-		Ticketlink.click();
+		if(pr.getdata("ZephyreBaseURL").equals("Parallel"))
+		{
+		OpenTicketbyName();
+		}
+		else {
+		
+		 Ticketlink.click();
+		}
 		Thread.sleep(5000);
 		driver.switchTo().defaultContent();
 	}

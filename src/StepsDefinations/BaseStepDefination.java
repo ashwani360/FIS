@@ -8,6 +8,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 import org.apache.commons.lang.reflect.FieldUtils;
 import org.json.JSONException;
@@ -54,32 +55,50 @@ public class BaseStepDefination extends SeleniumTest{
  	public static boolean cyclecreated=false;
  	public static Map<String, String> CurrentExecutionID = new HashMap<String, String>();
  	public static String TicketID="";
+ 	public static int totalthread;
  	ProeprtyReader pr=new ProeprtyReader("Config.properties");
 	CreateCycleAndAddTests zp=new CreateCycleAndAddTests();
 	public AccessibilitySniffer accessibilitySniffer;
 
 	@Before
 	   public void setUp(Scenario s) throws Exception {
+		
+		Random r = new Random();
+		int low = 1000;
+		int high = 5000;
+		int result = r.nextInt(high-low) + low;
+		//totalthread=totalthread+1;
+		System.out.println("Thread waiting for"+result);
+		
+		//Thread.sleep(result);
 	      if (!initialized) {
-	    	  System.out.println("Cycle created in :"+cyclecreated);
+	    	  System.out.println("Thread with Scenario attached"+Thread.currentThread().getId());
+	    	  System.out.println("Cycle created in :"+totalthread);
+	    	  zephyrBaseUrl=pr.getdata("ZephyreBaseURL");
+		  		accessKey=pr.getdata("AccessKey");
+		  		secretKey=pr.getdata("SecreteKey");
+		  		accountId=pr.getdata("Jirausername");
+		  		projectId=Long.parseLong(pr.getdata("projectId"));
+				versionId = Long.parseLong(pr.getdata("versionId"));
 		  		//Properties pr=new Properties();
+				if(pr.getdata("ZephyreBaseURL").equals("Parallel"));{
+					Thread.sleep(result);
+				}
 	    	  if(!cyclecreated) {
-	  		zephyrBaseUrl=pr.getdata("ZephyreBaseURL");
-	  		accessKey=pr.getdata("AccessKey");
-	  		secretKey=pr.getdata("SecreteKey");
-	  		accountId=pr.getdata("Jirausername");
-	  		projectId=Long.parseLong(pr.getdata("projectId"));
-			versionId = Long.parseLong(pr.getdata("versionId"));
+	    		  cyclecreated=true;
 			Cycleid=zp.Cyclecreation(zephyrBaseUrl, accessKey, secretKey, accountId,projectId,versionId);
-	        System.out.println(zephyrBaseUrl);
-	        System.out.println(accessKey);
-	        System.out.println(secretKey);
-	        System.out.println(accountId);
-	        System.out.println(projectId);
-	        System.out.println(versionId);
-	        System.out.println(versionId);
-	        cyclecreated=true;
+	        
 	    	}
+	    	  else {
+	    		  System.out.println("Cycle Has been already created");
+	    	  }
+	    	  System.out.println(zephyrBaseUrl);
+		        System.out.println(accessKey);
+		        System.out.println(secretKey);
+		        System.out.println(accountId);
+		        System.out.println(projectId);
+		        System.out.println(versionId);
+		        System.out.println(versionId);
 			this.Launchbrowser();
 			System.out.println("Browser Launched");
 	        this.addTestcaseinTestcycle(s,this.getwebdriver(),Cycleid);
@@ -113,29 +132,55 @@ public class BaseStepDefination extends SeleniumTest{
 	
 	//UpdateStatus(zephyrBaseUrl, accessKey, secretKey,accountId,pid,vid, "1", CurrentExecutionID, CycleID, stag.get(stag.size()-1).toString().substring(1, stag.get(stag.size()-1).toString().length()))
 	@After
-	public void Teardown(Scenario s) throws Throwable{
+	public void Teardown(Scenario s) throws IllegalStateException, JSONException, IOException, URISyntaxException, InterruptedException{
 		
 		//System.out.println("Current Error in Screen"+Reporter.getCurrentTestResult().getName().toString());
 		//System.out.println("Current Error in Screen2"+Reporter.getCurrentTestResult().getStatus());
 		//System.out.println("Current Attributes"+Reporter.getCurrentTestResult().getTestContext().getCurrentXmlTest().);
 		String Error = "Test Has been Passed";
-		Field field = FieldUtils.getField(((ScenarioImpl) s).getClass(), "stepResults", true);
-		   field.setAccessible(true);
-		   try {
-		       ArrayList<Result> results = (ArrayList<Result>) field.get(s);
-		       for (Result result : results) {
-		           if (result.getError() != null)
-		               System.out.println("Error Thrown Was:"+result.getError().toString());
-		           System.out.println("Message for Error Thrown Was:"+result.getError().getMessage());
-		           Error="Error Thrown Was:"+result.getError().toString();
-		       } 
-		   } catch (Exception e) {
-			   System.out.println("Error while logging error"+e.toString()+"-"+e.getMessage().toString());
-			   Error=e.toString()+"-"+e.getMessage().toString();
-		   }
+
+		//Field field = FieldUtils.getField(((ScenarioImpl) s).getClass(), "stepResults", true);
+
+		   //field.setAccessible(true)
+		try {
+		Error=Reporter.getCurrentTestResult().getThrowable().getMessage().toString();
+		System.out.println("Thowable Error"+Error);
+		}
+		catch(Exception e)
+		{
+			//System.out.println(e.getMessage().toString());
+			Error = "Test Has been Passed";
+			System.out.println("In case No throwable "+Error);
+		}
+//		   try {
+
+//		       ArrayList<Result> results = (ArrayList<Result>) field.get(s);
+
+//		       for (Result result : results) {
+
+//		           if (result.getError() != null)
+
+//		               System.out.println("Error Thrown Was:"+result.getError().toString());
+
+//		           System.out.println("Message for Error Thrown Was:"+result.getError().getMessage());
+
+//		           Error="Error Thrown Was:"+result.getError().toString();
+
+//		       } 
+
+//		   } catch (Exception e) {
+
+//			   System.out.println("Error while logging error"+e.toString()+"-"+e.getMessage().toString());
+
+//			   Error=e.toString()+"-"+e.getMessage().toString();
+
+//		   }
+
+		
 		
 		List<String> stag=(List<String>) s.getSourceTagNames();
-		this.tidyUp(Error,s,this.getwebdriver(),zephyrBaseUrl,accessKey,secretKey,accountId,projectId,versionId,CurrentExecutionID,Cycleid.toString(),stag.get(stag.size()-1).toString().substring(1, stag.get(stag.size()-1).toString().length()));
+		Collections.sort(stag);
+		this.tidyUp(Error,s,this.getwebdriver(),zephyrBaseUrl,accessKey,secretKey,accountId,projectId,versionId,CurrentExecutionID,Cycleid.toString(),stag.get(0).toString().substring(1, stag.get(0).toString().length()));
 
 		initialized = false;
 	}

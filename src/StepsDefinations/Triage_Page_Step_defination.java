@@ -42,14 +42,15 @@ public class Triage_Page_Step_defination {
 	public void user_is_click_on_a_with_name_Triage(String arg1) throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
 		System.out.println("Open a Ticket with Triage");
+		
 		if(!arg1.equals("")) {
 			System.out.println("A ticket with Fixed State has been open");
-			TriagePage.OpenTicketforTriage(arg1);
+			TriagePage.OpenTicketforTriage(arg1,"Data");
 			Thread.sleep(5000);
 		}
 		else if(!contextSteps.TicketID.equals("")) {
 			System.out.println("A ticket with Fixed State has been open");
-			TriagePage.OpenTicketforTriage(contextSteps.TicketID);
+			TriagePage.OpenTicketforTriage(contextSteps.TicketID,"Var");
 			Thread.sleep(5000);
 		}
 		
@@ -58,6 +59,7 @@ public class Triage_Page_Step_defination {
 		TriagePage.OpenTicketbyName();
 		Thread.sleep(5000);
 		}
+		
 		//TriagePage.OpenTicketforTriage(arg1);
 	};
 

@@ -376,11 +376,11 @@ public class CreateCycleAndAddTests {
 			// System.out.println(string1);
 			JSONObject allIssues = new JSONObject(string1);
 			JSONArray IssuesArray = allIssues.getJSONArray("searchObjectList");
-			// System.out.println(IssuesArray.length());
+			System.out.println(IssuesArray.length());
 			if (IssuesArray.length() == 0) {
 				return executionIds;
 			}
-			for (int j = 0; j <= IssuesArray.length() - 1; j++) {
+			for (int j = 0; j <= IssuesArray.length()-1; j++) {
 				JSONObject jobj = IssuesArray.getJSONObject(j);
 				JSONObject jobj2 = jobj.getJSONObject("execution");
 				System.out.println("Complete list"+jobj2.toString());

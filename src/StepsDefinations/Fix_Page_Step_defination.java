@@ -42,14 +42,15 @@ public class Fix_Page_Step_defination {
 	public void user_is_click_on_a_with_name_Fix(String arg1) throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
 		System.out.println(" Select A ticket with  Fix stage");
+		
 		if(!arg1.equals("")) {
 			System.out.println("A ticket with Fixed State has been open");
-			FixPage.OpenTicketinfix(arg1);
+			FixPage.OpenTicketinfix(arg1,"Data");
 			Thread.sleep(5000);
 		}
 		else if(!contextSteps.TicketID.equals("")) {
 			System.out.println("A ticket with Fixed State has been open");
-			FixPage.OpenTicketinfix(contextSteps.TicketID);
+			FixPage.OpenTicketinfix(contextSteps.TicketID,"Var");
 			Thread.sleep(5000);
 		}
 		

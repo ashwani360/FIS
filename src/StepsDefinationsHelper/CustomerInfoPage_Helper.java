@@ -17,6 +17,7 @@ import org.openqa.selenium.support.ui.Wait;
 public class CustomerInfoPage_Helper extends CustomerInfo {
 	public WebDriver driver;
 	Wait<WebDriver> wait;
+	ProeprtyReader pr=new ProeprtyReader("Config.properties");
 	public CustomerInfoPage_Helper(WebDriver driver) {
 		// this.driver = driver;
 		this.driver=driver;
@@ -41,7 +42,7 @@ public class CustomerInfoPage_Helper extends CustomerInfo {
 		driver.switchTo().defaultContent();
 	}
 	
-	public void OpenTicket(String arg1) throws InterruptedException{
+	public void OpenTicket(String arg1,String Mod) throws InterruptedException{
 		driver.switchTo().frame("PegaGadget0Ifr");
 		filterbyCaseid.click();
 		Thread.sleep(1000);
@@ -49,7 +50,16 @@ public class CustomerInfoPage_Helper extends CustomerInfo {
 		Thread.sleep(1000);
 		ApplyFilterbutton.click();
 		Thread.sleep(5000);
-		Ticketlink.click();
+		if(pr.getdata("ZephyreBaseURL").equals("Parallel"))
+		{
+		OpenTicketbyName();
+		}
+		else {
+		
+		 Ticketlink.click();
+		}
+		
+		
 		Thread.sleep(5000);
 		driver.switchTo().defaultContent();
 	}

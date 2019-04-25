@@ -13,4 +13,40 @@
       </class> <!-- Runners.CustomerInfo -->
     </classes>
   </test> <!-- Update Contact Information(failed) -->
+  <test thread-count="2" name="Update the Service Request to Fix(failed)" parallel="tests">
+    <classes>
+      <class name="Runners.Fix">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="feature" invocation-numbers="0"/>
+          <include name="writeExtentReport"/>
+          <include name="tearDownClass"/>
+        </methods>
+      </class> <!-- Runners.Fix -->
+    </classes>
+  </test> <!-- Update the Service Request to Fix(failed) -->
+  <test thread-count="2" name="Triage the Service Request(failed)" parallel="tests">
+    <classes>
+      <class name="Runners.Triage">
+        <methods>
+          <include name="writeExtentReport"/>
+          <include name="setUpClass"/>
+          <include name="feature" invocation-numbers="0"/>
+          <include name="tearDownClass"/>
+        </methods>
+      </class> <!-- Runners.Triage -->
+    </classes>
+  </test> <!-- Triage the Service Request(failed) -->
+  <test thread-count="2" name="Close the Resolved Service Request(failed)" parallel="tests">
+    <classes>
+      <class name="Runners.CustomerSatisfaction">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="writeExtentReport"/>
+          <include name="feature" invocation-numbers="0"/>
+          <include name="tearDownClass"/>
+        </methods>
+      </class> <!-- Runners.CustomerSatisfaction -->
+    </classes>
+  </test> <!-- Close the Resolved Service Request(failed) -->
 </suite> <!-- Failed suite [BDD Test Suite] -->
