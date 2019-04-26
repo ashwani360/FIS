@@ -74,7 +74,7 @@ public class SeleniumTest {
 			 }
 			 else {
 			 DesiredCapabilities capabilities = DesiredCapabilities.chrome();
-		capabilities.setCapability(CapabilityType.PAGE_LOAD_STRATEGY, "none");
+		//capabilities.setCapability(CapabilityType.PAGE_LOAD_STRATEGY, "none");
 		//capabilities = DesiredCapabilities.chrome();
 		//capabilities.setCapability(CapabilityType.PAGE_LOAD_STRATEGY, "none");
 			capabilities = new DesiredCapabilities();
