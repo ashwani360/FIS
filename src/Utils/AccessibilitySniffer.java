@@ -33,7 +33,7 @@ public class AccessibilitySniffer implements IAccessibilityManager {
         js = (JavascriptExecutor) driver;
         writer = Files.newBufferedWriter(Paths.get(SAMPLE_CSV_FILE));
         csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT.withHeader("URL", "Page","Time of Execution", "Report Type", "Detail"));
-        
+        System.out.println("Newly created Accessibility Report is"+SAMPLE_CSV_FILE);
        
     }
     

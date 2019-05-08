@@ -57,7 +57,7 @@ public class CreateCycleAndAddTests {
 		createCycleObj.put("startDate", System.currentTimeMillis());
 		createCycleObj.put("projectId", pid);
 		createCycleObj.put("versionId", vid);
-
+		System.out.println("New Created Cycle Name is "+cycleName);
 		StringEntity cycleJSON = null;
 		try {
 			cycleJSON = new StringEntity(createCycleObj.toString());
